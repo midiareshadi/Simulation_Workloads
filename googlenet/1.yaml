@@ -1,4 +1,3 @@
-# Resnet50: Conv 22:
 problem:
   instance:
     C: 3
