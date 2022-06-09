@@ -1,0 +1,19 @@
+architecture_constraints:
+  targets:
+  
+  - target: shared_glb
+    type: bypass
+    bypass: [Weights]
+    keep: [Inputs, Outputs]    
+    
+  - target: DummyBuffer
+    type: bypass
+    bypass: [Inputs, Outputs, Weights]
+
+  - target: weights_spad
+    type: bypass
+    bypass: [Inputs, Outputs]
+    keep: [Weights]
+    
+    
+
