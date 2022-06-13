@@ -1,3 +1,4 @@
+# Layer 5 of AlexNet
 problem:
   instance:
     C: 384
