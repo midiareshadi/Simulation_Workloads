@@ -1,3 +1,4 @@
+# The weight stationary constraints. Constraints helps to reduce the mapping search time.
 architecture_constraints:
   targets:
   
