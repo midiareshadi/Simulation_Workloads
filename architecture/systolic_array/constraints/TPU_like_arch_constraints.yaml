@@ -16,8 +16,9 @@ architecture_constraints:
     bypass: [Inputs, Outputs]
     keep: [Weights]
     
+    # Spatial assignment of weight values
   - target: DummyBuffer
     type: spatial
     split: 1
     permutation: MC
-    factors: C=128 M=128
+    factors: N=1 P=1 Q=1
