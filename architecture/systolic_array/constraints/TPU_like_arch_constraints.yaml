@@ -20,5 +20,5 @@ architecture_constraints:
   - target: DummyBuffer
     type: spatial
     split: 1
-    permutation: MC
-    factors: N=1 P=1 Q=1
+    permutation: MC is # Spatial assigment of M and C dimension of weughts
+    factors: N=1 P=1 Q=1 # Temporal assignment of IFmap and OFMap dimension
