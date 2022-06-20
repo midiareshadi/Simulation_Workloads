@@ -1,0 +1,57 @@
+architecture:
+  version: 0.3
+  local:
+  - name: system.TPU_like_Systolic_Array.PE[0..16383].weights_spad
+    class: smartbuffer_RF
+    attributes:
+      block-size: 1
+      memory_depth: 16
+      memory_width: 16
+      meshX: 128
+      n_banks: 1
+      n_buffets: 1
+      n_rdwr_ports: 2
+      read_bandwidth: 1
+      technology: 45nm
+      word-bits: 16
+      write_bandwidth: 1
+  - name: system.TPU_like_Systolic_Array.PE[0..16383].mac
+    class: intmac
+    attributes:
+      datawidth: 16
+      latency: 5ns
+      meshX: 128
+      num_pipeline_stages: 2
+      technology: 45nm
+  - name: system.TPU_like_Systolic_Array.shared_glb
+    class: smartbuffer_SRAM
+    attributes:
+      block-size: 4
+      memory_depth: 262144
+      memory_width: 64
+      n_banks: 32
+      n_buffets: 1
+      n_rdwr_ports: 2
+      read_bandwidth: 16
+      technology: 45nm
+      word-bits: 16
+      write_bandwidth: 16
+  - name: system.TPU_like_Systolic_Array.DummyBuffer[0..127]
+    class: regfile
+    attributes:
+      block-size: 1
+      depth: 16
+      latency: 5ns
+      meshX: 128
+      n_ports: 2
+      technology: 45nm
+      width: 16
+      word-bits: 16
+  - name: system.DRAM
+    class: DRAM
+    attributes:
+      block-size: 4
+      technology: 65nm
+      type: LPDDR4
+      width: 64
+      word-bits: 16
