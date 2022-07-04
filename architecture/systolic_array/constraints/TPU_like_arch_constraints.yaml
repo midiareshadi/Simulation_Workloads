@@ -16,14 +16,3 @@ architecture_constraints:
     bypass: [Inputs, Outputs]
     keep: [Weights]
     
-    # Spatial assignment of weight values
-    
-  - target: shared_glb
-    type: spatial
-    split: 1
-    permutation: CM
-    
-    
-  - target: shared_glb
-    type: temporal
-    factors: N=1 P=1 Q=1
